@@ -2,7 +2,7 @@ name: GitHub Actions Build dnsmasq-china-list-smartdns
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 22 * * *"
+    - cron: "0 16 * * *" #北京时间每日零点启动
   push:
     branches:
       - master
