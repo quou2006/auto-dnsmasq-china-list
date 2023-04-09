@@ -33,7 +33,8 @@ jobs:
         #合并
         cat ./google.china.raw.txt >> /tmp/upload/accelerated-domains.china.raw.txt 2>/dev/null
         cat ./apple.china.raw.txt >> /tmp/upload/accelerated-domains.china.raw.txt 2>/dev/null
-        
+        #压缩（直接txt，Gitee会触发违禁词异常）
+        tar -zcvf /tmp/upload/accelerated-domains.china.raw.txt.tar.gz /tmp/upload/accelerated-domains.china.raw.txt
         
     - name: Set variables
       run: |
@@ -48,7 +49,7 @@ jobs:
 #        draft: false
 #        prerelease: false
 #        files: |
-#            /tmp/upload/accelerated-domains.china.raw.txt
+#            /tmp/upload/accelerated-domains.china.raw.txt.tar.gz
 #      env:
 #        GITHUB_TOKEN: ${{ secrets.MYTOKEN }}  
        
